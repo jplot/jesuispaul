@@ -1,2 +1,74 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container-xxl bg-info p-5 mw-75">
+    <%= render 'header' %>
+    <div class="container-fluid p-0">
+        <div class="row g-2">
+            <div class="col-9">
+                <div class="row g-2">
+                    <div class="col-3"><div class=" bg-danger">
+                        <figure class="figure m-0">
+                            <%= image_tag('paul_sunset', class: 'figure-img img-fluid m-0', alt: 'Paul au Saintes-Marie-de-la-Mer devant un coucher de soleil') %>
+                            <figcaption class="figure-caption">
+                                <div class="row p-3 align-items-end">
+                                    <div class="col-2"><a href="" class="text-light" download><i class="bi bi-download"></i></a></div>
+                                    <div class="col-10 text-light">
+                                        <div class="text-end">Le 20 juin 2020</div>
+                                        <div class="text-end">Au Saintes-Marie-de-la-Mer</div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div></div>
+                    <div class="col-6"><div class="p-3 bg-danger">a propros</div></div>
+                    <div class="col-3"><div class="p-3 bg-danger">video</div></div>
+                    <div class="col-3">
+                        <div class="row g-2">
+                            <div class="col"><div class="p-3 bg-danger">wiki</div></div>
+                            <div class="col"><div class="p-3 bg-danger">wdata</div></div>
+                            <div class="col-12"><div class="p-3 bg-danger">soutien</div></div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row g-2">
+                            <div class="col-12"><div class="p-3 bg-danger">peti</div></div>
+                            <div class="col"><div class="p-3 bg-danger">asso1</div></div>
+                            <div class="col"><div class="p-3 bg-danger">asso2</div></div>
+                        </div>
+                    </div>
+                    <div class="col-6"><div class="p-3 bg-danger">message</div></div>
+                </div>
+            </div>
+            <div class="col-3"><div class="p-3 bg-danger">img long</div></div>
+            <div class="col-9">
+                <div class="row g-2">
+                    <div class="col-3"><div class="p-3 bg-danger">img</div></div>
+                    <div class="col-3">
+                        <div class="row g-2">
+                            <div class="col-12"><div class="p-3 bg-danger">num 1</div></div>
+                            <div class="col-12"><div class="p-3 bg-danger">num 2</div></div>
+                            <div class="col-12"><div class="p-3 bg-danger">num 3</div></div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                         <div class="row g-2">
+                            <div class="col"><div class="p-3 bg-danger">asso</div></div>
+                            <div class="col"><div class="p-3 bg-danger">asso</div></div>
+                            <div class="col-12"><div class="p-3 bg-danger">livreb</div></div>
+                        </div>
+                    </div>
+                    <div class="col-3"><div class="p-3 bg-danger">img</div></div>
+                </div>
+            </div>
+            <div class="col-3"><div class="p-3 bg-danger">img</div></div>
+            <div class="col-7">
+                <div class="row g-2">
+                    <div class="col-6"><div class="p-3 bg-danger">video</div></div>
+                    <div class="col-6"><div class="p-3 bg-danger">articles</div></div>
+                </div>
+            </div>
+            
+            <div class="col-5"><div class="p-3 bg-danger">image</div></div>
+
+        </div>
+    </div>
+    <%= render 'footer' %>
+</div>
