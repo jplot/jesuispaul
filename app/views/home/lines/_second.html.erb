@@ -1,0 +1,33 @@
+<!-- begin second line -->
+<div class="col-1"> <!-- empty column to force column display to 10 points instead of 12 --></div>
+<div class="col-8">
+    <div class="row g-2">
+        <div class="col-3">
+            <%= render 'home/components/figure_img', date: 'En 2022', location: 'Au Forum des Associations de Paris Centre', img_asset: 'paul_pes', img_desc: 'Paul Au Forum des Associations de Paris Centre' %>
+        </div>
+        <div class="col-3">
+            <div class="row g-2">
+                <div class="col-12"><div class="p-3 bg-danger">num 1</div></div>
+                <div class="col-12"><div class="p-3 bg-danger">num 2</div></div>
+                <div class="col-12"><div class="p-3 bg-danger">num 3</div></div>
+            </div>
+        </div>
+        <div class="col-3">
+                <div class="row g-2">
+                <div class="col"><div class="p-3 bg-danger">asso</div></div>
+                <div class="col"><div class="p-3 bg-danger">asso</div></div>
+                <div class="col-12">
+                    <%= render 'home/components/book', title:'Livre blanc pour le développement des déplacements à vélo et des espaces piétons', text: 'Saint-Ouen-sur-Seine, co-écrit par Paul', link: '#', color: 'warning' %>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <%= render 'home/components/figure_img', date: 'Le 3 mars 2024', location: 'À Paris', img_asset: 'paul_bike', img_desc: 'Paul transportant un matelas sur son vélo à Paris' %>
+        </div>
+    </div>
+</div>
+<div class="col-2">
+    <%= render 'home/components/figure_img', date: 'Le 31 octobre 2020', location: 'À La Faurie', img_asset: 'paul_mountain', img_desc: 'Paul se promenant dans les montagnes de La Faurie' %>
+</div>
+<div class="col-1"> <!-- empty column to force column display to 10 points instead of 12 --></div>
+<!-- end second line -->

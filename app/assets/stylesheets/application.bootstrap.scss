@@ -1,8 +1,22 @@
-@use 'bootstrap/scss/bootstrap';
-@use 'bootstrap-icons/font/bootstrap-icons';
+$red: #990000 !default;
+$blue: #006699 !default;
+$yellow: #EC673B !default;
+$secondary: #CCCCCC !default; 
+
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
 
 
+#page-container { max-width: 1920px; }
 .figure {
     position: relative;
-    &-caption { position: absolute; bottom: 0; }
+    font-size: 12px;
+    &-caption {
+        background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.1));
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0; 
+        i { font-size: 16px; }
+    }
 }

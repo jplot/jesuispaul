@@ -1,0 +1,15 @@
+<%# locals: (date: '', location: '', img_asset: '', img_desc: '') %>
+<figure class="figure m-0">
+    <%= image_tag(img_asset, alt: img_desc, class: 'figure-img img-fluid m-0 rounded-2 border border-2 border-dark') %>
+    <figcaption class="figure-caption rounded-bottom-2">
+        <div class="row p-3 align-items-end">
+            <div class="col-2">
+                <a href="<%= image_path(img_asset) %>" class="text-light" download><i class="bi bi-download"></i></a>
+            </div>
+            <div class="col-10 text-light">
+                <div class="text-end"><%= date %></div>
+                <div class="text-end"><%= location %></div>
+            </div>
+        </div>
+    </figcaption>
+</figure>

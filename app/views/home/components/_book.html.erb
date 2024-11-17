@@ -1,0 +1,13 @@
+<%# locals: (title: '', text: '', link: '#', color: 'danger') %>
+
+<div class="book p-3 bg-<%= color %> rounded-2 border border-2 border-dark">
+    <div class="row align-items-center">
+        <div class="col-3 text-center">
+            <a href="<%= link %>" class="text-light" download><i class="bi bi-download"></i></a>
+        </div>
+        <div class="col-9 text-light">
+            <h6 class="book-title"><%= title %></h6>
+            <p class="book-text fw-lighter fs-6 mb-0"><%= text %></p>
+        </div>
+    </div>
+</div>
