@@ -1,28 +1,36 @@
 <!-- begin first line -->
 <div class="col-1"> <!-- empty column to force column display to 10 points instead of 12 --></div>
 <div class="col-8">
-    <div class="row g-2">
+    <div class="row g-3">
         <div class="col-3">
             <%= render 'home/components/figure_img', date: 'Le 20 juin 2020', location: 'Au Saintes-Marie-de-la-Mer', img_asset: 'paul_sunset', img_desc: 'Paul au Saintes-Marie-de-la-Mer devant un coucher de soleil' %>
         </div>
         <div class="col-6"><div class="p-3 bg-danger rounded-2">a propros</div></div>
         <div class="col-3"><div class="p-3 bg-danger">video</div></div>
         <div class="col-3">
-            <div class="row g-2">
-                <div class="col"><div class="p-3 bg-danger">wiki</div></div>
-                <div class="col"><div class="p-3 bg-danger">wdata</div></div>
+            <div class="row g-3">
+                <div class="col">
+                    <%= render 'home/components/brand', text: 'Page Wikipédia' , link: nil, media: 'brands/logo-wikipedia', alt: 'logo Wikipédia', disabled: true %>
+                </div>
+                <div class="col">
+                    <%= render 'home/components/brand', text: 'Fiche Wikidata' , link: 'https://www.wikidata.org/wiki/Q130558045', media: 'brands/logo-wikidata', alt: 'logo Wikidata' %>
+                </div>
                 <div class="col-12">
                     <%= render 'home/components/card', title: 'Nous soutenir', text: 'en faisant un don', link: 'https://tribee.fr/cagnotte/7X0759Q6728MYAKQJKJVEGKKMY/participer' %>
                 </div>
             </div>
         </div>
         <div class="col-3">
-            <div class="row g-2">
+            <div class="row g-3">
                 <div class="col-12">
                     <%= render 'home/components/card', title: '# Stop violences Motorisées', text: 'signez et/ou témoignez', link: 'https://stopviolencesmotorisees.org', color: 'primary' %>
                 </div>
-                <div class="col"><div class="p-3 bg-danger">asso1</div></div>
-                <div class="col"><div class="p-3 bg-danger">asso2</div></div>
+                <div class="col">
+                    <%= render 'home/components/brand', text: 'Fédération française des usagers de la bicyclette' , link: 'https://www.fub.fr', media: 'brands/logo-fub', alt: 'logo Fédération française des usagers de la bicyclette' %>
+                </div>
+                <div class="col">
+                    <%= render 'home/components/brand', text: 'Mieux se déplacer à bicyclette' , link: 'https://mdb-idf.org', media: 'brands/logo-mdb', alt: 'logo Mieux se déplacer à bicyclette' %>
+                </div>
             </div>
         </div>
         <div class="col-6"><div class="p-3 bg-danger">message</div></div>
