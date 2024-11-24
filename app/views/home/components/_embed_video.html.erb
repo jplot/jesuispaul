@@ -1,0 +1,55 @@
+<%
+    videos = [
+        {
+            embed_url: 'https://geo.dailymotion.com/player.html?video=x99evbu',
+            external_url: 'https://dai.ly/x99evbu',
+            title:'« La voiture tue » : émotion et colère pour Anne Hidalgo, qui rend hommage au cycliste Paul Varry'
+
+        },
+        {
+            embed_url: 'https://www.youtube-nocookie.com/embed/1dv9oeMlffM',
+            external_url: 'https://youtu.be/1dv9oeMlffM',
+            title: "« La voiture est une arme qui tue » : l'hommage à Paul, ce cycliste renversé à Paris"
+
+        },
+        {
+            embed_url: 'https://www.youtube-nocookie.com/embed/cYPBO4DUROs',
+            external_url: 'https://youtu.be/cYPBO4DUROs',
+            title:"« Un tueur fou l'a écrasé »"
+
+        },
+        {
+            embed_url: 'https://www.youtube-nocookie.com/embed/grhjtOSpzU0?start=237',
+            external_url: 'https://youtu.be/grhjtOSpzU0?t=237',
+            title:'Questions au Gouvernement'
+
+        },
+        {
+            embed_url: 'https://www.youtube-nocookie.com/embed/0ac9vVX5RG4',
+            external_url: 'https://youtu.be/0ac9vVX5RG4',
+            title:'Cycliste tué : la mère et le frère de Paul Varry témoignent'
+
+        }
+    ]
+%>
+<div id="embed-carousel" class="carousel carousel-light slide rounded-2 border border-2 border-dark bg-dark">
+  <div class="carousel-indicators">
+    <% videos.each_index do |idx| %>
+        <button type="button" data-bs-target="#embed-carousel" data-bs-slide-to="<%= idx %>" class="<%= idx.zero? ? 'active' : '' %>" aria-current="true" aria-label="Slide <%= idx %>"></button>
+    <% end %>
+  </div>
+  <div class="carousel-inner px-3 pt-3 pb-4 mb-2">
+    <% videos.each_with_index do |video, idx| %>
+        <div class="carousel-item <%= idx.zero? ? 'active' : '' %>">
+            <iframe src="<%= video[:embed_url] %>"
+                width="100%" height="226"
+                title="<%= video[:title] %>"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    <% end %>
+  </div>
+</div>
