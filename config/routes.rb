@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   # root "home#index"
 
   # root to: redirect("https://tribee.fr/participations/7X0759Q6728MYAKQJKJVEGKKMY")
+
+  devise_for :users
 end
