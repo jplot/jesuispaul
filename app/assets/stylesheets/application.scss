@@ -1,11 +1,10 @@
 $red: #990000 !default;
 $blue: #006699 !default;
 $yellow: #EC673B !default;
-$secondary: #CCCCCC !default; 
+$secondary: #CCCCCC !default;
 
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
-
+@import 'bootstrap';
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css');
 
 #page-container { max-width: 1920px; }
 .disabled-overlay {
