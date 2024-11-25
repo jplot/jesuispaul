@@ -35,7 +35,7 @@
 <div id="embed-carousel" class="carousel carousel-light slide rounded-2 border border-2 border-dark bg-dark">
   <div class="carousel-indicators">
     <% videos.each_index do |idx| %>
-        <button type="button" data-bs-target="#embed-carousel" data-bs-slide-to="<%= idx %>" class="<%= idx.zero? ? 'active' : '' %>" aria-current="true" aria-label="Slide <%= idx %>"></button>
+        <button type="button" data-bs-target="#embed-carousel" data-bs-slide-to="<%= idx %>" class="<%= idx.zero? ? 'active' : '' %>" aria-current="true" aria-label="video <%= idx %>"></button>
     <% end %>
   </div>
   <div class="carousel-inner px-3 pt-3 pb-4 mb-2">

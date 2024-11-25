@@ -7,9 +7,9 @@
         </div>
         <div class="col-3">
             <div class="row g-3">
-                <div class="col-12"><div class="p-3 bg-danger">num 1</div></div>
-                <div class="col-12"><div class="p-3 bg-danger">num 2</div></div>
-                <div class="col-12"><div class="p-3 bg-danger">num 3</div></div>
+                <%= render 'home/components/numbers', type: 'person', icon: 'person-standing', numbers: [[[45, 'piétons tués en janvier 2024'], [189, 'blessés graves en janvier 2024']],[[38, 'piétons tués en janvier 2023'], [192, 'blessés graves en janvier 2023']], [[98, 'piétons tués en janvier 2022'], [45, 'blessés graves en janvier 2022']]]%>
+                <%= render 'home/components/numbers', type: 'cycle', icon: 'bicycle', numbers: [[[45, 'cyclistes tués en janvier 2024'], [189, 'blessés graves en janvier 2024']],[[38, 'cyclistes tués en janvier 2023'], [192, 'blessés graves en janvier 2023']]]%>
+                <%= render 'home/components/numbers', type: 'scooter', icon: 'scooter', numbers: [[[45, 'usagers tués en EDPm* janvier 2024'], [189, 'blessés graves en janvier 2024']],[[38, 'usagers tués en EDPm* janvier 2023'], [192, 'blessés graves en janvier 2023']]]%>
             </div>
         </div>
         <div class="col-3">
