@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   # root "posts#index"
   # root "home#index"
 
-  # root to: redirect("https://tribee.fr/participations/7X0759Q6728MYAKQJKJVEGKKMY")
+  root to: redirect("https://tribee.fr/participations/7X0759Q6728MYAKQJKJVEGKKMY")
+
+  scope controller: :wedding do
+    get :mariage, action: :index
+    post :mariage, action: :create
+  end
 
   devise_for :users
 end

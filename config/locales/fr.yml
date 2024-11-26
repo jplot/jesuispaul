@@ -1,0 +1,8 @@
+fr:
+  invitation_mailer:
+    pending:
+      subject: "Demande d'invitation au mariage de Jonathan et Paul"
+    accepted:
+      subject: "Demande d'invitation au mariage de Jonathan et Paul"
+    rejected:
+      subject: "Demande d'invitation au mariage de Jonathan et Paul"

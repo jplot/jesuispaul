@@ -26,6 +26,12 @@ gem "bootsnap", require: false
 gem "sassc-rails", "~> 2.1"
 gem "bootstrap", "~> 5.0"
 gem "devise", "~> 4.9"
+gem "aasm", "~> 5.5"
+gem "phonelib", "~> 0.10.1"
+gem "textris", "~> 0.7.0"
+gem "rails-i18n", "~> 7.0"
+gem "devise-i18n", "~> 1.12"
+gem "twilio-ruby", "~> 7.3"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

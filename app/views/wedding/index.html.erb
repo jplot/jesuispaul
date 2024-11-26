@@ -1,0 +1,38 @@
+<div class="container-fluid" id="page-container">
+  <%= render 'home/header' %>
+  <div class="container-fluid px-0 pt-3 pb-5">
+    <div class="row g-2">
+      <div class="col-1"></div>
+      <div class="col">
+        <%= form_for :invitation do |form| %>
+          <div class="row g-3 mb-3">
+            <div class="col">
+              <%= form.label :firstname, 'Prénom', class: 'form-label' %>
+              <%= form.text_field :firstname, class: 'form-control', required: true %>
+            </div>
+            <div class="col">
+              <%= form.label :lastname, 'Nom', class: 'form-label' %>
+              <%= form.text_field :lastname, class: 'form-control', required: true %>
+            </div>
+          </div>
+          <div class="mb-3">
+            <%= form.label :email, 'Adresse email', class: 'form-label' %>
+            <%= form.email_field :email, class: 'form-control' %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :phone_number, 'Numéro de téléphone', class: 'form-label' %>
+            <%= form.telephone_field :phone_number, class: 'form-control', placeholder: '+33612345678' %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :comment, 'Message', class: 'form-label' %>
+            <%= form.text_area :comment, class: 'form-control', 'aria-describedby': 'invitation_comment_help' %>
+            <div id="invitation_comment_help" class="form-text">Un petit message, si jamais je ne reconnais pas votre nom (Ex: PeS ou camarade de 42)</div>
+          </div>
+          <%= form.submit "Envoyer", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+  <%= render 'home/footer' %>
+</div>
