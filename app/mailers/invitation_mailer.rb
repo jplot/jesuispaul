@@ -6,7 +6,7 @@ class InvitationMailer < ApplicationMailer
 
   def accepted(invitation)
     @firstname = invitation.firstname
-    # attachments['invitation.pdf'] = ''
+    attachments["invitation.pdf"] = Rails.root.join("public", "invitation.pdf").read
     mail to: invitation.email
   end
 

@@ -6,7 +6,7 @@ class InvitationTexter < ApplicationTexter
 
   def accepted(invitation)
     @firstname = invitation.firstname
-    text to: invitation.phone_number, media_urls: []
+    text to: invitation.phone_number, media_urls: ["#{root_url}invitation.pdf"]
   end
 
   def rejected(invitation, reason)
