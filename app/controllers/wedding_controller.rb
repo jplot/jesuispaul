@@ -13,7 +13,7 @@ class WeddingController < ApplicationController
         InvitationTexter.pending(invitation).deliver_later
       end
 
-      redirect_to root_url, success: 'Merci pour votre réponse !'
+      redirect_to root_url, success: "Merci pour votre réponse !"
     else
       render :index, status: :unprocessable_entity
     end
