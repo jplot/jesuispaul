@@ -1,0 +1,37 @@
+<!-- begin second line -->
+<div class="col-1"> <!-- empty column to force column display to 10 points instead of 12 --></div>
+<div class="col-8">
+    <div class="row g-3">
+        <div class="col-3">
+            <%= render 'home/components/figure_img', date: 'En 2022', location: 'Au Forum des Associations de Paris Centre', img_asset: 'paul_pes', img_desc: 'Paul Au Forum des Associations de Paris Centre' %>
+        </div>
+        <div class="col-3">
+            <div class="row g-3">
+                <%= render 'home/components/numbers', type: 'person', icon: 'person-standing', numbers: [[[45, 'piétons tués en janvier 2024'], [189, 'blessés graves en janvier 2024']],[[38, 'piétons tués en janvier 2023'], [192, 'blessés graves en janvier 2023']], [[98, 'piétons tués en janvier 2022'], [45, 'blessés graves en janvier 2022']]]%>
+                <%= render 'home/components/numbers', type: 'cycle', icon: 'bicycle', numbers: [[[45, 'cyclistes tués en janvier 2024'], [189, 'blessés graves en janvier 2024']],[[38, 'cyclistes tués en janvier 2023'], [192, 'blessés graves en janvier 2023']]]%>
+                <%= render 'home/components/numbers', type: 'scooter', icon: 'scooter', numbers: [[[45, 'usagers tués en EDPm* janvier 2024'], [189, 'blessés graves en janvier 2024']],[[38, 'usagers tués en EDPm* janvier 2023'], [192, 'blessés graves en janvier 2023']]]%>
+            </div>
+        </div>
+        <div class="col-3">
+                <div class="row g-3">
+                <div class="col">
+                    <%= render 'home/components/brand', text: 'Paris en Selle' , link: 'https://parisenselle.fr', media: 'brands/logo-pes', alt: 'logo Paris en Selle' %>
+                </div>
+                <div class="col">
+                    <%= render 'home/components/brand', text: 'L’Atelier solidaire' , link: 'https://atelierso.fr', media: 'brands/logo-as', alt: 'logo L’Atelier solidaire' %>
+                </div>
+                <div class="col-12">
+                    <%= render 'home/components/book', title:'Livre blanc pour le développement des déplacements à vélo et des espaces piétons', text: 'Saint-Ouen-sur-Seine, co-écrit par Paul', link: '#', color: 'warning' %>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <%= render 'home/components/figure_img', date: 'Le 3 mars 2024', location: 'À Paris', img_asset: 'paul_bike', img_desc: 'Paul transportant un matelas sur son vélo à Paris' %>
+        </div>
+    </div>
+</div>
+<div class="col-2">
+    <%= render 'home/components/figure_img', date: 'Le 31 octobre 2020', location: 'À La Faurie', img_asset: 'paul_mountain', img_desc: 'Paul se promenant dans les montagnes de La Faurie' %>
+</div>
+<div class="col-1"> <!-- empty column to force column display to 10 points instead of 12 --></div>
+<!-- end second line -->

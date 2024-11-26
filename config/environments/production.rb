@@ -85,10 +85,10 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Do not dump schema after migrations.
-  # config.active_record.dump_schema_after_migration = false
+  config.active_record.dump_schema_after_migration = false
 
   # Only use :id for inspections in production.
-  # config.active_record.attributes_for_inspect = [ :id ]
+  config.active_record.attributes_for_inspect = [ :id ]
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
@@ -97,4 +97,16 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  config.action_mailer.default_url_options = { host: 'https://jesuispaul.org' }
+  config.action_mailer.delivery_method = :smtp
+  config.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    port: 587,
+    domain: "jesuispaul.org",
+    user_name: "apikey",
+    password: ENV["SENDGRID_API_KEY"],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end

@@ -1,0 +1,70 @@
+$red: #990000 !default;
+$blue: #006699 !default;
+$yellow: #EC673B !default;
+$secondary: #CCCCCC !default;
+
+@import 'bootstrap';
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css');
+
+#page-container { max-width: 1920px; }
+.disabled-overlay {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background-color: #E0E0E0;
+    opacity: 0.5;
+}
+
+// components
+.numbers {
+    .carousel {
+        .carousel-indicators {
+            [data-bs-target] {
+                width: 16px;
+                height: 0;
+                border-top: 8px solid $dark;
+                border-bottom: 8px solid $dark;
+                border-radius: 50%;
+            }
+        }
+        .num-text { font-size: 10px; line-height: 14px; }
+        .num-title { font-size: 18px; }
+    }
+}
+#embed-carousel {
+    .carousel-indicators {
+        [data-bs-target] {
+            width: 16px;
+            height: 0;
+            border-top: 8px solid $light;
+            border-bottom: 8px solid $light;
+            border-radius: 50%;
+        }
+    }
+}
+.figure {
+    position: relative;
+    font-size: 12px;
+    &-caption {
+        background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.1));
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0; 
+        i { font-size: 16px; }
+    }
+}
+
+.book {
+    .book-text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.brand {
+    .card-text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

@@ -1,0 +1,33 @@
+<%# locals: ( type: '', numbers: [], icon: 'person-standing' ) %>
+<div class="numbers p-3 rounded-2 border border-2 border-dark">
+    <div class="row align-items-center">
+        <div class="col-3 text-center">
+            <i class="bi bi-<%= icon %> text-dark fs-1"></i>
+        </div>
+        <div class="col-9">
+            <div id="numbers<%= type.present? ? "-#{type}" : '' %>-carousel" class="carousel carousel-dark slide">
+                <div class="carousel-indicators mb-0">
+                    <% numbers.each_index do |idx| %>
+                        <button type="button" data-bs-target="#numbers<%= type.present? ? "-#{type}" : '' %>-carousel" data-bs-slide-to="<%= idx %>" class="<%= idx.zero? ? 'active' : '' %>" aria-current="true" aria-label="number <%= idx %>"></button>
+                    <% end %>
+                </div>
+                <div class="carousel-inner pb-4">
+                    <% numbers.each_with_index do |number, idx| %>
+                        <div class="carousel-item <%= idx.zero? ? 'active' : '' %>">
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <div class="num-title"><%= number[0][0] %></div>
+                                    <div class="num-text"><%= number[0][1] %></div>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <div class="num-title"><%= number[1][0] %></div>
+                                    <div class="num-text"><%= number[1][1] %></div>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

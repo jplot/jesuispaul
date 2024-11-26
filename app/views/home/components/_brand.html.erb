@@ -1,0 +1,9 @@
+<%# locals: ( text: '', link: '#', media: '', alt: '', disabled: false ) %>
+<div class="card brand rounded-2 border border-2 border-dark">
+    <div class="card-body p-1">
+        <p class="card-text text-center text-dark fw-lighter my-2"><%= text %></p>
+        <%= image_tag(media, alt: alt, height: 70, width: 'auto', class: 'mx-auto img-fluid d-block my-2') %>
+        <a href="<%= link %>" target="_blank"><i class="bi bi-box-arrow-up-right text-dark"></i></a>
+        <%= tag.div(class: 'disabled-overlay') if disabled %>
+        </div>
+</div>
