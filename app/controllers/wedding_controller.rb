@@ -8,12 +8,12 @@ class WeddingController < ApplicationController
 
     if invitation.save
       if invitation.email.present?
-        InvitationMailer.pending(invitation).deliver_later
+        InvitationMailer.pending(invitation).deliver_now
       elsif invitation.phone_number.present?
-        InvitationTexter.pending(invitation).deliver_later
+        InvitationTexter.pending(invitation).deliver
       end
 
-      redirect_to root_url, success: "Merci pour votre réponse !"
+      redirect_to mariage_url, success: "Merci pour votre réponse !"
     else
       render :index, status: :unprocessable_entity
     end
