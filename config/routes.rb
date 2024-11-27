@@ -16,6 +16,12 @@ Rails.application.routes.draw do
 
   root to: redirect("https://tribee.fr/participations/7X0759Q6728MYAKQJKJVEGKKMY", status: 302)
 
+  constraints host: /^(?!jesuispaul\.org$).*$/ do
+    match "(*any)", via: :all, to: redirect { |_, request|
+      URI.parse(request.url).tap { |uri| uri.host = "jesuispaul.org" }.to_s
+    }
+  end
+
   scope controller: :wedding do
     get :mariage, action: :index
     post :mariage, action: :create
