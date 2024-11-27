@@ -32,7 +32,6 @@ gem "textris", "~> 0.7.0"
 gem "rails-i18n", "~> 7.0"
 gem "devise-i18n", "~> 1.12"
 gem "twilio-ruby", "~> 7.3"
-gem "sidekiq", "~> 7.3"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

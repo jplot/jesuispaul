@@ -41,8 +41,6 @@ module JeSuisPaul
 
     config.textris_delivery_method = :twilio
 
-    config.active_job.queue_adapter = :sidekiq
-
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
