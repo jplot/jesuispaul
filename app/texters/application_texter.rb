@@ -3,8 +3,8 @@ module Textris
     class Twilio < Textris::Delivery::Base
       def deliver(to)
         options = {
-          :to   => PhoneFormatter.format(to),
-          :body => message.content
+          to: PhoneFormatter.format(to),
+          body: message.content
         }
 
         if message.twilio_messaging_service_sid

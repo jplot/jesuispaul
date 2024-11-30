@@ -20,7 +20,7 @@ class InvitationTexter < ApplicationTexter
       "Avec toute notre affection,\n" \
       "Jonathan et Paul"
 
-    text to: invitation.phone_number, body: content, media_urls: ["#{root_url}invitation.pdf"]
+    text to: invitation.phone_number, body: content, media_urls: [ "#{root_url}invitation.pdf" ]
   end
 
   def rejected(invitation, reason)

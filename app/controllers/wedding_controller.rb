@@ -1,6 +1,5 @@
 class WeddingController < ApplicationController
   def index
-
   end
 
   def create
