@@ -14,12 +14,14 @@ Rails.application.routes.draw do
   # root "posts#index"
   # root "home#index"
 
-  root to: redirect("https://tribee.fr/participations/7X0759Q6728MYAKQJKJVEGKKMY", status: 302)
+  if Rails.env.production?
+    root to: redirect("https://tribee.fr/participations/7X0759Q6728MYAKQJKJVEGKKMY", status: 302)
 
-  constraints host: /^(?!jesuispaul\.org$).*$/ do
-    match "(*any)", via: :all, to: redirect { |_, request|
-      URI.parse(request.url).tap { |uri| uri.host = "jesuispaul.org" }.to_s
-    }
+    constraints host: /^(?!jesuispaul\.org$).*$/ do
+      match "(*any)", via: :all, to: redirect { |_, request|
+        URI.parse(request.url).tap { |uri| uri.host = "jesuispaul.org" }.to_s
+      }
+    end
   end
 
   scope controller: :wedding do
