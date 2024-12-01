@@ -36,6 +36,8 @@ module JeSuisPaul
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.encoding = "utf-8"
+
     config.i18n.default_locale = :fr
     config.i18n.available_locales = [ :fr ]
 

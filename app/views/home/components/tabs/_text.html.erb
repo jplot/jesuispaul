@@ -1,0 +1,9 @@
+<%# locals: ( texts: [] ) %>
+<% texts.each do |text| %>
+<div class="card border-0">
+    <div class="card-body px-0 py-2">
+        <%= tag.h5 text[0], class: "card-title" %>
+        <%= tag.div text[1].join("\n"), class: "card-text" %>
+    </div>
+</div>
+<% end %>
