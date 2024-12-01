@@ -38,7 +38,7 @@
         <button type="button" data-bs-target="#embed-carousel" data-bs-slide-to="<%= idx %>" class="<%= idx.zero? ? 'active' : '' %>" aria-current="true" aria-label="video <%= idx %>"></button>
     <% end %>
   </div>
-  <div class="carousel-inner px-3 pt-3 pb-4 mb-2">
+  <div class="carousel-inner px-3 pt-3 pb-5">
     <% videos.each_with_index do |video, idx| %>
         <div class="carousel-item <%= idx.zero? ? 'active' : '' %>">
             <iframe src="<%= video[:embed_url] %>"

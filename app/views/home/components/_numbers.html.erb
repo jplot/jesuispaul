@@ -1,5 +1,5 @@
-<%# locals: ( type: '', numbers: [], icon: 'person-standing' ) %>
-<div class="numbers p-3 rounded-2 border border-2 border-dark">
+<%# locals: ( idx: 0, type: '', numbers: [], icon: 'person-standing' ) %>
+<div class="numbers p-1 rounded-2 border border-2 border-dark<%= idx.positive? ? ' mt-3' : '' %>">
     <div class="row align-items-center">
         <div class="col-3 text-center">
             <i class="bi bi-<%= icon %> text-dark fs-1"></i>

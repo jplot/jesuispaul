@@ -1,0 +1,32 @@
+<%# locals: ( list: [], links: [] ) %>
+<% list.each do |item| %>
+<div class="card border-0">
+    <div class="card-body px-0 py-2">
+        <%= tag.h5 item[0], class: "card-title" %>
+        <%= content_tag(:div, class: "card-text") do
+            content_tag(:ul, class: "mb-1") do
+                item[1].map { |i| tag.li i }.join.html_safe
+            end
+        end %>
+    </div>
+</div>
+<% end %>
+<div class="btn-list pt-2 d-inline-flex gap-4">
+<% links.each do |link| %>
+    <%  case link[:type]
+            when "file"
+                icon  = "file-earmark-pdf"
+                color = "danger"
+            when "linkedin"
+                icon  = "linkedin"
+                color = "primary"
+            else 
+                icon  = "link-45deg"
+                color = "primary"
+            end
+    %>
+    <a href="<%= link[:value] %>" class="btn btn-outline-dark" <%= link[:type] == "file" ? :download : '' %>>
+        <i class="bi bi-<%= icon %> text-<%= color %>"></i> <%= link[:label] %>
+    </a>
+<% end %>
+</div>
