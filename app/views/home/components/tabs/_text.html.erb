@@ -1,9 +1,20 @@
-<%# locals: ( texts: [] ) %>
+<%
+  texts = [
+    {
+      title:'Une étoile est née',
+      message: "Paul est né le 19 novembre 1996 à Gap dans les Hautes-Alpes.<br/>Il grandit dans un petit village au contact de la nature et des animaux dans l’exploitation chevrière de sa famille. Il fréquente la classe unique de l’école de La Faurie. Paul a un esprit curieux, inventif et créatif qu’il met au service de trouvailles pour améliorer le quotidien. Il adore construire des cabanes, inventer des mécanismes et circuits pour faire couler l’eau ou le sable, bricoler des objets en bois, un ingénieur en herbe !<br/>Paul est un soleil d’intelligence, de douceur, de sensibilité, d’ouverture au monde. Une jolie tête blonde pleine de vie.<br/>Il fréquente le Collège François Mitterand à Veynes, fan du «&nbsp;club environnement&nbsp;» et de l’atelier théâtre, puis, le lycée Aristide Briand à Gap où il obtient son Baccalauréat scientifique."
+    },
+    {
+      title:'Toujours plus haut',
+      message:"Il part à Paris pour étudier à l’Ecole 42, lors de sa formation, il réalise une application pour les autres étudiants afin de faciliter l’utilisation de l’intranet, ce qui lui permet d’apprendre à développer une application Androïd, c’est à ce moment là qu’il se rend compte que sa passion allait devenir son métier.<br/>Il part dans la Silicon Valley pendant 3 mois pour l’ouverture d’un nouveau campus de l’école 42 puis revient à Paris pour terminer son cursus."
+    }
+  ]
+%>
 <% texts.each do |text| %>
 <div class="card border-0">
-    <div class="card-body px-0 py-2">
-        <%= tag.h5 text[0], class: "card-title" %>
-        <%= tag.div text[1].join("\n"), class: "card-text" %>
-    </div>
+  <div class="card-body px-0 pb-0 pt-3">
+    <%= tag.h5 text[:title], class: 'card-title' %>
+    <%= tag.div text[:message].html_safe, class: 'card-text' %>
+  </div>
 </div>
 <% end %>

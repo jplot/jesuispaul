@@ -1,74 +1,31 @@
 <%
-    tabs = {
-        child: {
-            label: "Enfance",
-            type: "text",
-            values: [
-                ["Une étoile est née", ["Paul est né le 19 novembre 1996 à Gap dans les Hautes-Alpes.",
-                                        "Il grandit dans un petit village au contact de la nature et des animaux dans l’exploitation chevrière de sa famille. Il fréquente la classe unique de l’école de La Faurie. Paul a un esprit curieux, inventif et créatif qu’il met au service de trouvailles pour améliorer le quotidien. Il adore construire des cabanes, inventer des mécanismes et circuits pour faire couler l’eau ou le sable, bricoler des objets en bois, un ingénieur en herbe !",
-                                        "Paul est un soleil d’intelligence, de douceur, de sensibilité, d’ouverture au monde. Une jolie tête blonde pleine de vie.",
-                                        "Il fréquente le Collège François Mitterand à Veynes, fan du «\u00A0club environnement\u00A0» et de l’atelier théâtre, puis, le lycée Aristide Briand à Gap où il obtient son Baccalauréat scientifique."]
-                ],
-                ["Toujours plus haut", ["Il part à Paris pour étudier à l’Ecole 42, lors de sa formation, il réalise une application pour les autres étudiants afin de faciliter l’utilisation de l’intranet, ce qui lui permet d’apprendre à développer une application Androïd, c’est à ce moment là qu’il se rend compte que sa passion allait devenir son métier.",
-                                        "Il part dans la Silicon Valley pendant 3 mois pour l’ouverture d’un nouveau campus de l’école 42 puis revient à Paris pour terminer son cursus."]]
-            ]
-        },
-        career: {
-            label: "Parcours",
-            type: "list",
-            values: [
-                ["Free - Groupe iliad", ["Lead Développeur Android, mars 2022 - 15 octobre 2024 (2 ans 7 mois 14 jours)",
-                                         "Développeur Android, janvier 2021 - février 2022 (1 an 2 mois)"],
-                ],
-                ["Zoov", ["Développeur Android, février 2019 - décembre 2020 (1 an 11 mois)"]],
-                ["PayKRôM", ["Lead Développeur Android / UX Mobile, octobre 2018 - janvier 2019 (4 mois)"]],
-                ["Mon Super Voisin", ["Développeur Android, mars 2018 - juillet 2018 (5 mois)"]]
-            ],
-            links: [{ type: "linkedin", label: "linkedin", value: "https://www.linkedin.com/in/paul-varry" }, { type: "file", label: "Curriculum vitæ", value: "" }]
-        },
-        engagement: {
-            label: "Engagement",
-            values: []},
-        death: {
-            label: "Décès",
-            values: []}
-    }
+  tabs     = { childhood: 'Enfance', career: 'Parcours', engagement: 'Engagement', deaths: 'Décès' }
+  contents = { childhood: 'home/components/tabs/text', career: 'home/components/tabs/list', engagement: nil, deaths: nil }
 %>
-<div class="resume py-2 px-3 rounded-2 border border-2 border-dark">
-    <ul class="nav nav-underline mb-3" id="resume-tab" role="tablist">
-        <% tabs.each_with_index do |(tab, values), idx| %>
-        <li class="nav-item" role="presentation">
-            <%= tag.button(values[:label],
-                type: "button",
-                role: "tab",
-                class: ["nav-link text-dark", {active: idx.zero? }],
-                id: "resume-#{tab}-tab",
-                data: { "bs-toggle": "tab", "bs-target": "#resume-#{tab}" },
-                aria: { controls: "resume-#{tab}",
-                        selected: idx.zero? ? true : false }
-            ) %>
-        </li>
-        <% end %>
-    </ul>
-    <div class="tab-content" id="resume-content">
-        <% tabs.each_with_index do |(tab, values), idx| %>
-            <%
-                value = ''
-                if values[:values].present?
-                    value = case values[:type]
-                            when "text" then render('home/components/tabs/text', texts: values[:values] )
-                            when "list" then render('home/components/tabs/list', links: values[:links], list: values[:values] )
-                            else ''
-                            end
-                end
-            %>
-            <%= tag.div(value,
-                role: "tabpanel",
-                class: ["tab-pane", "fade", { show: idx.zero?, active: idx.zero? }],
-                id: "resume-#{tab}",
-                aria: { labelledby: "resume-#{tab}-tab" }
-            )
-            %>
-        <% end %>
-    </div>
+<div class="p-3 rounded-2 border border-2 border-dark">
+   <ul class="nav nav-underline" id="resume" role="tablist">
+    <% tabs.each_with_index do |(key,value), idx| %>
+      <li class="nav-item" role="presentation">
+        <%= tag.button value,
+                       class: "nav-link text-dark #{idx.zero? ? 'active' : ''}",
+                       id: "#{key}-tab",
+                       type: 'button',
+                       role: 'tab',
+                       aria: { controls: "#{key}-tab-pane", selected: idx.zero? },
+                       data: { :'bs-toggle' => 'tab', :'bs-target' => "##{key}-tab-pane" }
+        %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="tab-content" id="resume-content">
+    <% contents.each_with_index do |(key, comp), idx| %>
+      <%= tag.div comp ? render(comp) : '...', 
+                  class: "tab-pane fade #{idx.zero? ? 'show active' : ''}",
+                  id: "#{key}-tab-pane",
+                  role: 'tabpanel',
+                  tabindex: '0',
+                  aria: {labelledby: "#{key}-tab" }
+      %>
+    <% end %>
+  </div>
 </div>

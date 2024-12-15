@@ -1,32 +1,63 @@
-<%# locals: ( list: [], links: [] ) %>
-<% list.each do |item| %>
+<%
+  careers = [
+    {
+      job: 'Free - Groupe iliad',
+      resume: ['Lead Développeur Android, mars 2022 - 15 octobre 2024 (2 ans 7 mois 14 jours)', 'Développeur Android, janvier 2021 - février 2022 (1 an 2 mois)']
+    },
+     {
+      job: 'Zoov',
+      resume: ['Développeur Android, février 2019 - décembre 2020 (1 an 11 mois)']
+    },
+     {
+      job: 'PayKRôM',
+      resume: ['Lead Développeur Android / UX Mobile, octobre 2018 - janvier 2019 (4 mois)']
+    },
+     {
+      job: 'Mon Super Voisin',
+      resume: ['Développeur Android, mars 2018 - juillet 2018 (5 mois)']
+    }
+  ]
+
+  buttons = [
+    {
+      icon: 'linkedin',
+      color: 'primary',
+      text: 'Linkedin',
+      link: 'https://www.linkedin.com/in/paul-varry',
+      type: 'external'
+    },
+    {
+      icon: 'filetype-pdf',
+      color: 'danger',
+      text: 'Curriculum vitæ',
+      link: 'paul_pes', # TODO: change asset name
+      type: 'download'
+    }
+  ]
+%>
+<% careers.each do |career| %>
 <div class="card border-0">
-    <div class="card-body px-0 py-2">
-        <%= tag.h5 item[0], class: "card-title" %>
-        <%= content_tag(:div, class: "card-text") do
-            content_tag(:ul, class: "mb-1") do
-                item[1].map { |i| tag.li i }.join.html_safe
-            end
-        end %>
-    </div>
+  <div class="card-body px-0 pb-0 pt-3">
+    <%= tag.h5 career[:job], class: 'card-title' %>
+    <ul  class="card-text"><%= career[:resume].map { |desc| tag.li desc }.join.html_safe %></ul>
+  </div>
 </div>
 <% end %>
-<div class="btn-list pt-2 d-inline-flex gap-4">
-<% links.each do |link| %>
-    <%  case link[:type]
-            when "file"
-                icon  = "file-earmark-pdf"
-                color = "danger"
-            when "linkedin"
-                icon  = "linkedin"
-                color = "primary"
-            else 
-                icon  = "link-45deg"
-                color = "primary"
-            end
-    %>
-    <a href="<%= link[:value] %>" class="btn btn-outline-dark" <%= link[:type] == "file" ? :download : '' %>>
-        <i class="bi bi-<%= icon %> text-<%= color %>"></i> <%= link[:label] %>
-    </a>
+<div class="d-grid gap-3 d-md-flex mt-5">
+<% buttons.each do |button| %>
+  <%
+    body = content_tag :span do
+      [
+        tag.i('', class: "bi bi-#{button[:icon]} text-#{button[:color]} me-2"),
+        tag.span(button[:text])
+      ].join.html_safe
+    end
+
+    link_options = { class: 'btn btn-outline-dark' }.tap do |obj|
+      obj[:target]   = '_blank'      if  button[:type] == 'external'
+      obj[:download] = button[:link] if button[:type] == 'download'
+    end
+  %>
+  <%= link_to body, asset_url(button[:link]), link_options  %>
 <% end %>
 </div>
