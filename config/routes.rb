@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # root "home#index"
 
   if Rails.env.production?
-    root to: redirect("https://tribee.fr/participations/7X0759Q6728MYAKQJKJVEGKKMY", status: 302)
+    root to: redirect("https://www.lepotcommun.fr/pot/m230d9ye", status: 302)
 
     constraints host: /^(?!jesuispaul\.org$).*$/ do
       match "(*any)", via: :all, to: redirect { |_, request|
