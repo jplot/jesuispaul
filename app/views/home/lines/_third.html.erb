@@ -1,15 +1,11 @@
 <!-- begin third line -->
-<div class="col-1"> <!-- empty column to force column display to 10 points instead of 12 --></div>
-<div class="col-6">
-    <div class="row g-3">
-        <div class="col-6">
-            <%= render 'home/components/embed_video' %>
-        </div>
-        <div class="col-6"><div class="p-3 bg-danger">articles</div></div>
-    </div>
-</div>      
-<div class="col-4">
-    <%= render 'home/components/figure_img', date: 'Le 27 mai 2023', location: 'Emménagement à Paris', img_asset: 'bike_mooving', img_desc: "Photographie du vélo lors de l'emmégement avec Paul à Paris" %>
+<div class="bw-3 bh-2 bw-md-4 o-md-1">
+    <%= render 'home/components/embed_video' %>
 </div>
-<div class="col-1"> <!-- empty column to force column display to 10 points instead of 12 --></div>
+<div class="bw-3 bh-2 bw-md-2">
+    <%= render 'home/components/card', title: 'Articles de presse', text: 'à venir', link: '#' %>
+</div>
+<div class="bw-4 bh-2 o-md-2">
+    <%= render 'home/components/figure_img', date: 'Le 27 mai 2023', location: 'Emménagement à Paris', img_asset: 'bike_mooving', img_desc: "Photographie du vélo lors de l'emménagement avec Paul à Paris" %>
+</div>
 <!-- end third line -->

@@ -1,8 +1,8 @@
 <%# locals: ( idx: 0, type: '', numbers: [], icon: 'person-standing' ) %>
-<div class="numbers p-1 rounded-2 border border-2 border-dark<%= idx.positive? ? ' mt-3' : '' %>">
-    <div class="row align-items-center">
+<div class="numbers p-1 pb-0 rounded-2 border border-2 border-dark">
+    <div class="row">
         <div class="col-3 text-center">
-            <i class="bi bi-<%= icon %> text-dark fs-1"></i>
+            <i class="bi bi-<%= icon %> text-dark"></i>
         </div>
         <div class="col-9">
             <div id="numbers<%= type.present? ? "-#{type}" : '' %>-carousel" class="carousel carousel-dark slide">

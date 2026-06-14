@@ -1,13 +1,8 @@
-<div class="container-fluid overflow-x-hidden px-0" id="page-container">
-    <div class="row">
-        <%= render 'header' %>
-        <div class="container-fluid p-0">
-            <div class="row g-3">
-                <%= render 'home/lines/first' %>
-                <%= render 'home/lines/second' %>
-                <%= render 'home/lines/third' %>
-            </div>
-        </div>
-        <%= render 'footer' %>
+<div class="container-fluid overflow-x-hidden" id="page-container">
+    <%= render 'header' %>
+    <div class="bento-stack">
+        <div class="bento"><%= render 'home/lines/first' %></div>
+        <div class="bento"><%= render 'home/lines/second' %><%= render 'home/lines/third' %></div>
     </div>
+    <%= render 'footer' %>
 </div>
