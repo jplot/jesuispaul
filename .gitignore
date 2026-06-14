@@ -41,3 +41,6 @@
 
 # Ignore macOS folder metadata.
 .DS_Store
+
+# Ignore JetBrains IDE files.
+.idea/
