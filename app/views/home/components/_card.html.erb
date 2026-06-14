@@ -5,4 +5,5 @@
         <p class="card-text text-center text-secondary fw-lighter mb-1"><%= text %></p>
     </div>
     <a href="<%= link %>" class="d-inline-block ms-1" target="_blank"><i class="bi bi-box-arrow-up-right text-light"></i></a>
+    <% if link.present? %><a href="<%= link %>" class="stretched-link" target="_blank" aria-label="<%= title %>"></a><% end %>
 </div>
