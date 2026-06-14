@@ -147,6 +147,7 @@ $bento-gap: .75rem;
     .bi { font-size: clamp(1rem, 34cqmin, 2.2rem); }
     .num-title { font-size: clamp(.75rem, 19cqmin, 1.25rem); line-height: 1.1; }
     .num-text { font-size: clamp(0.55rem, 11cqmin, 0.7rem); line-height: 1.15; }
+    .num-var { font-size: clamp(.5rem, 12cqmin, .8rem); }
 
     // en petit : l'icône passe en badge (coin bas-gauche), le texte prend toute la largeur
     @container (max-width: 220px) {
