@@ -1,0 +1,32 @@
+<%
+  messages = [
+    {
+      text: "Paul, toi le jeune homme au sourire toujours avenant, dessiné sous tes yeux bleus d’azur, barré d’une mèche blonde. Tu m’as fait penser au Petit Prince, posant un regard bienveillant sur les personnes, un regard doux et malicieux.\nExtrait du Petit Prince : « Quand tu regarderas le ciel, la nuit, puisque j’habiterai dans l’une d’elles, puisque je rirai dans l’une d’elles, alors ce sera pour toi comme si riaient toutes les étoiles. Tu auras, toi, des étoiles qui savent rire. »\nJe suis ravie d’avoir croisé ton chemin, toi, la petite lumière.",
+      author: 'Joëlle'
+    }
+  ]
+%>
+<div class="message card rounded-2 border border-2 border-dark">
+  <div class="card-body p-3 d-flex flex-column">
+    <h6 class="card-title mb-2">Messages</h6>
+    <div id="message-carousel" class="carousel slide flex-grow-1 d-flex flex-column">
+      <div class="carousel-inner flex-grow-1">
+        <% messages.each_with_index do |msg, idx| %>
+          <div class="carousel-item h-100 <%= 'active' if idx.zero? %>">
+            <div class="message-body h-100 d-flex flex-column">
+              <p class="message-text flex-grow-1 mb-1"><%= msg[:text] %></p>
+              <p class="message-author text-end fst-italic mb-0"><%= msg[:author] %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <% if messages.size > 1 %>
+        <div class="carousel-indicators position-static m-0 mt-2">
+          <% messages.each_index do |idx| %>
+            <button type="button" data-bs-target="#message-carousel" data-bs-slide-to="<%= idx %>" class="<%= 'active' if idx.zero? %>" aria-current="<%= idx.zero? %>" aria-label="message <%= idx + 1 %>"></button>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

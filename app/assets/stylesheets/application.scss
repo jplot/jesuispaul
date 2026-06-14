@@ -222,6 +222,27 @@ $bento-gap: .75rem;
     }
 }
 
+// message : témoignages en carrousel (texte scrollable dans la cellule)
+.message {
+    .card-title { font-size: 1rem; }
+    .card-body, .carousel, .carousel-inner, .carousel-item { min-height: 0; }
+    .carousel { margin-right: -1rem; }   // s'étend jusqu'au bord -> scrollbar au bord de la card
+    .message-text { white-space: pre-wrap; font-size: 14px; line-height: 1.35; overflow: hidden auto; min-height: 0; padding-right: 1rem; text-align: justify; }
+    .message-author { font-size: 14px; padding-right: 1rem; }
+}
+
+// articles de presse : liste paginée (scrollable dans la cellule)
+.articles {
+    .card-title { font-size: 1rem; }
+    .card-body, .carousel, .carousel-inner, .carousel-item { min-height: 0; }
+    .carousel { margin-right: -1rem; }   // s'étend jusqu'au bord -> scrollbar au bord de la card
+    .articles-list { height: 100%; overflow: hidden auto; padding-right: 1rem; }
+    .article-favicon { width: 16px; height: 16px; }
+    .article-date { font-size: 11px; white-space: nowrap; }
+    .article-title { font-size: 13px; }
+    a:hover .article-title { text-decoration: underline; }
+}
+
 // résumé : onglets fixes en haut, contenu scrollable dans la cellule
 .bento .resume {
     display: flex;
