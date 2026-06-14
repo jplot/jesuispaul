@@ -16,11 +16,21 @@
                         <div class="carousel-item <%= idx.zero? ? 'active' : '' %>">
                             <div class="row">
                                 <div class="col-6 text-center">
-                                    <div class="num-title"><%= number[0][0] %></div>
+                                    <div class="num-title">
+                                        <%= number[0][0] %>
+                                        <% if number[0][2] %>
+                                            <span class="num-var small fw-bold <%= number[0][2].negative? ? 'text-success' : 'text-danger' %>"><%= number[0][2].negative? ? '▼' : '▲' %> <%= number[0][2].positive? ? '+' : '' %><%= number[0][2] %>%</span>
+                                        <% end %>
+                                    </div>
                                     <div class="num-text"><%= number[0][1] %></div>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <div class="num-title"><%= number[1][0] %></div>
+                                    <div class="num-title">
+                                        <%= number[1][0] %>
+                                        <% if number[1][2] %>
+                                            <span class="num-var small fw-bold <%= number[1][2].negative? ? 'text-success' : 'text-danger' %>"><%= number[1][2].negative? ? '▼' : '▲' %> <%= number[1][2].positive? ? '+' : '' %><%= number[1][2] %>%</span>
+                                        <% end %>
+                                    </div>
                                     <div class="num-text"><%= number[1][1] %></div>
                                 </div>
                             </div>
