@@ -4,7 +4,7 @@
     <figcaption class="figure-caption rounded-bottom-2">
         <div class="row p-3 align-items-end">
             <div class="col-2">
-                <a href="<%= image_path(img_asset) %>" class="text-light" download><i class="bi bi-download"></i></a>
+                <a href="<%= image_path("photos/#{img_asset}.jpg") %>" class="text-light" download="<%= img_asset %>.jpg"><i class="bi bi-download"></i></a>
             </div>
             <div class="col-10 text-light">
                 <div class="text-end"><%= date %></div>
