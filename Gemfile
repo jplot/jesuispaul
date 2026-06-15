@@ -1,37 +1,29 @@
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.2.1", "< 8"
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'rails', '~> 8.1', '>= 8.1.3'
 gem "sprockets-rails"
-# Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-# Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "sassc-rails", "~> 2.1"
-gem "bootstrap", "~> 5.0"
-gem "devise", "~> 4.9"
-gem "aasm", "~> 5.5"
-gem "phonelib", "~> 0.10.1"
-gem "textris", "~> 0.7.0"
-gem "rails-i18n", "~> 7.0", "< 8"
-gem "devise-i18n", "~> 1.12"
-gem "twilio-ruby", "~> 7.3"
+gem "sassc-rails"
+gem 'bootstrap', '~> 5.3', '>= 5.3.8'
+gem 'devise', '~> 5.0', '>= 5.0.4'
+gem 'aasm', '~> 5.5', '>= 5.5.2'
+gem 'phonelib', '~> 0.10.22'
+gem 'textris', '~> 0.7.0'
+gem 'rails-i18n', '~> 8.1'
+gem 'devise-i18n', '~> 1.16'
+gem "twilio-ruby"
+
+# Ruby 4.0 a sorti ces libs stdlib en bundled gems : les déclarer explicitement
+gem "ostruct"
+gem "csv"
+gem "benchmark"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

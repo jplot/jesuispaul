@@ -1,0 +1,31 @@
+<%
+  tabs     = { childhood: 'Enfance', career: 'Parcours', engagement: 'Engagement', deaths: 'Décès' }
+  contents = { childhood: 'home/components/tabs/text', career: 'home/components/tabs/list', engagement: nil, deaths: nil }
+%>
+<div class="resume p-3 rounded-2 border border-2 border-dark">
+   <ul class="nav nav-underline" id="resume" role="tablist">
+    <% tabs.each_with_index do |(key,value), idx| %>
+      <li class="nav-item" role="presentation">
+        <%= tag.button value,
+                       class: "nav-link text-dark #{idx.zero? ? 'active' : ''}",
+                       id: "#{key}-tab",
+                       type: 'button',
+                       role: 'tab',
+                       aria: { controls: "#{key}-tab-pane", selected: idx.zero? },
+                       data: { :'bs-toggle' => 'tab', :'bs-target' => "##{key}-tab-pane" }
+        %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="tab-content" id="resume-content">
+    <% contents.each_with_index do |(key, comp), idx| %>
+      <%= tag.div comp ? render(comp) : '...', 
+                  class: "tab-pane fade #{idx.zero? ? 'show active' : ''}",
+                  id: "#{key}-tab-pane",
+                  role: 'tabpanel',
+                  tabindex: '0',
+                  aria: {labelledby: "#{key}-tab" }
+      %>
+    <% end %>
+  </div>
+</div>

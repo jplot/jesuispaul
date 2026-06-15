@@ -1,0 +1,40 @@
+<%# locals: (color: 'light', per_page: 8) %>
+<%
+  articles = [
+    { date: '16 oct. 2024', title: "La Ville de Saint-Ouen fait part de sa tristesse, de sa sidération et de sa colère", url: 'https://www.saint-ouen.fr' },
+    { date: '18 oct. 2024', title: "Cycliste tué à Paris : le chauffard mis en examen pour meurtre a été placé en détention", url: 'https://www.leparisien.fr' },
+    { date: '19 oct. 2024', title: "Mort de Paul Varry : ses camarades cyclistes de Saint-Ouen lui rendent hommage", url: 'https://www.lefigaro.fr' }
+  ]
+  pages = articles.each_slice(per_page).to_a
+%>
+<div class="articles card bg-<%= color %> rounded-2 border border-2 border-dark">
+  <div class="card-body p-3 d-flex flex-column">
+    <h6 class="card-title mb-2">Articles de presse</h6>
+    <div id="articles-carousel" class="carousel slide flex-grow-1 d-flex flex-column">
+      <div class="carousel-inner flex-grow-1">
+        <% pages.each_with_index do |page, idx| %>
+          <div class="carousel-item h-100 <%= 'active' if idx.zero? %>">
+            <ul class="articles-list list-unstyled m-0">
+              <% page.each do |art| %>
+                <li>
+                  <a href="<%= art[:url] %>" target="_blank" rel="noopener" class="d-flex align-items-center gap-2 text-decoration-none text-dark py-1">
+                    <%= image_tag("https://www.google.com/s2/favicons?domain=#{URI.parse(art[:url]).host}&sz=32", alt: '', class: 'article-favicon flex-shrink-0', loading: 'lazy') %>
+                    <span class="article-date text-secondary flex-shrink-0"><%= art[:date] %></span>
+                    <span class="article-title text-truncate"><%= art[:title] %></span>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+      <% if pages.size > 1 %>
+        <div class="carousel-indicators position-static m-0 mt-2">
+          <% pages.each_index do |idx| %>
+            <button type="button" data-bs-target="#articles-carousel" data-bs-slide-to="<%= idx %>" class="<%= 'active' if idx.zero? %>" aria-current="<%= idx.zero? %>" aria-label="page <%= idx + 1 %>"></button>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
