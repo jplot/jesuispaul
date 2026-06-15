@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'manifest' => 'rails/pwa#manifest', as: :pwa_manifest
 
   if Rails.env.production?
-    root to: redirect("https://www.lepotcommun.fr/cagnotte/solidaire/soutenons-la-famille-de-paul-varry-a-obtenir-justice-m230d9ye/participation", status: 302)
+    root controller: :home, action: :index
 
     constraints host: /^(?!jesuispaul\.org$).*$/ do
       match "(*any)", via: :all, to: redirect { |_, request|
