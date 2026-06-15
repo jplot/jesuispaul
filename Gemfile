@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 7.2.2"
+gem 'rails', '~> 8.1', '>= 8.1.3'
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
@@ -16,7 +16,7 @@ gem "devise", "~> 4.9"
 gem "aasm", "~> 5.5"
 gem "phonelib", "~> 0.10.1"
 gem "textris", "~> 0.7.0"
-gem "rails-i18n", "~> 7.0"
+gem 'rails-i18n', '~> 8.1'
 gem "devise-i18n", "~> 1.12"
 gem "twilio-ruby", "~> 7.3"
 
