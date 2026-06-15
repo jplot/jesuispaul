@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    aasm (5.5.0)
+    aasm (5.5.2)
       concurrent-ruby (~> 1.0)
     action_text-trix (2.1.19)
       railties
@@ -78,17 +78,14 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
     ast (2.4.2)
-    autoprefixer-rails (10.4.19.0)
-      execjs (~> 2)
     base64 (0.2.0)
-    bcrypt (3.1.20)
+    bcrypt (3.1.22)
     benchmark (0.4.0)
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
-    bootstrap (5.3.3)
-      autoprefixer-rails (>= 9.1.0)
+    bootstrap (5.3.8)
       popper_js (>= 2.11.8, < 3)
     brakeman (6.2.2)
       racc
@@ -101,17 +98,17 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    devise (4.9.4)
+    devise (5.0.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
+      railties (>= 7.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.12.1)
-      devise (>= 4.9.0)
+    devise-i18n (1.16.0)
+      devise (>= 5.0.0)
+      rails-i18n
     drb (2.2.1)
     erubi (1.13.0)
-    execjs (2.10.0)
     faraday (2.12.1)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -198,7 +195,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
-    phonelib (0.10.1)
+    phonelib (0.10.22)
     phony (2.20.15)
     popper_js (2.11.8)
     prism (1.9.0)
@@ -257,9 +254,9 @@ GEM
       io-console (~> 0.5)
     render_anywhere (0.0.12)
       rails (>= 3.0.7)
-    responders (3.1.1)
-      actionpack (>= 5.2)
-      railties (>= 5.2)
+    responders (3.2.0)
+      actionpack (>= 7.0)
+      railties (>= 7.0)
     rubocop (1.68.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -355,27 +352,27 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  aasm (~> 5.5)
+  aasm (~> 5.5, >= 5.5.2)
   benchmark
   bootsnap
-  bootstrap (~> 5.0)
+  bootstrap (~> 5.3, >= 5.3.8)
   brakeman
   csv
   debug
-  devise (~> 4.9)
-  devise-i18n (~> 1.12)
+  devise (~> 5.0, >= 5.0.4)
+  devise-i18n (~> 1.16)
   importmap-rails
   ostruct
   pg (~> 1.1)
-  phonelib (~> 0.10.1)
+  phonelib (~> 0.10.22)
   puma (>= 5.0)
   rails (~> 8.1, >= 8.1.3)
   rails-i18n (~> 8.1)
   rubocop-rails-omakase
-  sassc-rails (~> 2.1)
+  sassc-rails
   sprockets-rails
   textris (~> 0.7.0)
-  twilio-ruby (~> 7.3)
+  twilio-ruby
   tzinfo-data
   web-console
 

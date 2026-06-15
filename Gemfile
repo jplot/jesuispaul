@@ -10,15 +10,15 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "sassc-rails", "~> 2.1"
-gem "bootstrap", "~> 5.0"
-gem "devise", "~> 4.9"
-gem "aasm", "~> 5.5"
-gem "phonelib", "~> 0.10.1"
-gem "textris", "~> 0.7.0"
+gem "sassc-rails"
+gem 'bootstrap', '~> 5.3', '>= 5.3.8'
+gem 'devise', '~> 5.0', '>= 5.0.4'
+gem 'aasm', '~> 5.5', '>= 5.5.2'
+gem 'phonelib', '~> 0.10.22'
+gem 'textris', '~> 0.7.0'
 gem 'rails-i18n', '~> 8.1'
-gem "devise-i18n", "~> 1.12"
-gem "twilio-ruby", "~> 7.3"
+gem 'devise-i18n', '~> 1.16'
+gem "twilio-ruby"
 
 # Ruby 4.0 a sorti ces libs stdlib en bundled gems : les déclarer explicitement
 gem "ostruct"
